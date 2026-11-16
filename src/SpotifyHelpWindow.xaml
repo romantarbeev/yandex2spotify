@@ -1,0 +1,37 @@
+<Window x:Class="Yandex2Spotify.SpotifyHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Как подключить Spotify" Width="565" MaxHeight="665" SizeToContent="Height" ResizeMode="NoResize"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Background="#F3F5F1"
+        Foreground="#1A2822" FontFamily="Segoe UI" FontSize="14">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="22">
+            <TextBlock Text="Как подключить Spotify" FontSize="23" FontWeight="SemiBold" Margin="0,0,0,14" />
+
+            <TextBlock Text="1. Зарегистрируйте приложение" FontWeight="SemiBold" />
+            <TextBlock Text="В Spotify Dashboard нажмите Create app. Укажите имя и описание, выберите Web API и примите условия разработчика. Владельцу приложения в Development Mode нужна подписка Spotify Premium."
+                       TextWrapping="Wrap" Margin="0,3,0,11" />
+
+            <TextBlock Text="2. Добавьте Redirect URI" FontWeight="SemiBold" />
+            <TextBlock Text="Укажите адрес ниже в поле Redirect URIs и сохраните настройки. Для существующего приложения это поле находится в Settings. Тот же адрес укажите в Windows-приложении."
+                       TextWrapping="Wrap" Margin="0,3,0,7" />
+            <DockPanel LastChildFill="True" Margin="0,0,11,0">
+                <Button DockPanel.Dock="Right" Content="Копировать адрес" Click="CopyRedirect_Click" Padding="10,5" Margin="7,0,0,0" />
+                <TextBox x:Name="RedirectValue" IsReadOnly="True" Padding="7,4" VerticalContentAlignment="Center" FontFamily="Consolas"
+                         AutomationProperties.Name="Redirect URI" />
+            </DockPanel>
+
+            <TextBlock Text="3. Скопируйте Client ID и войдите" FontWeight="SemiBold" />
+            <TextBlock Text="Скопируйте Client ID из Settings в поле Client ID в Windows-приложении. Для этого способа входа достаточно Client ID. Нажмите «Подключить» и подтвердите доступ в браузере."
+                       TextWrapping="Wrap" Margin="0,3,0,8" />
+            <TextBlock Text="Если входите под другим аккаунтом в Development Mode, сначала добавьте его в Users Management в Spotify Dashboard."
+                       TextWrapping="Wrap" Foreground="#4F6258" />
+
+            <TextBlock x:Name="Feedback" TextWrapping="Wrap" Foreground="#4F6258" Margin="0,9,0,1" AutomationProperties.LiveSetting="Polite" />
+            <DockPanel LastChildFill="False" Margin="0,8,0,0">
+                <Button DockPanel.Dock="Left" Content="Открыть Spotify Dashboard ↗" Click="Dashboard_Click" Padding="12,6" />
+                <Button DockPanel.Dock="Right" Content="Закрыть" IsCancel="True" Padding="12,6" />
+            </DockPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,21 @@
+# Local credentials and OAuth caches
+.env
+.env.*
+!.env.example
+.spotify_cache*
+yandex-oauth.local.json
+connections.dat
+*.pfx
+*.p12
+*.key
+*.pem
+id_rsa
+id_ed25519
+
+# Visual Studio and Rider user state
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
